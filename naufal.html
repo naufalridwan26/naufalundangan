@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Spesial</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #fdfaf6; 
+            color: #4a4a4a;
+        }
+        .card {
+            text-align: center;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            max-width: 400px;
+            width: 85%;
+            border: 1px solid #eee;
+        }
+        .guest-name {
+            font-size: 1.6em;
+            font-weight: bold;
+            color: #b08d57;
+            margin: 15px 0 25px 0;
+            display: block;
+        }
+        .btn-open {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #a09077;
+            color: white;
+            padding: 14px 30px;
+            border-radius: 30px;
+            transition: 0.3s;
+            font-weight: 600;
+        }
+        .btn-open:hover {
+            background-color: #8e6f42;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <p>Kepada Yth:</p>
+        <span id="nama-tamu" class="guest-name">Tamu Undangan</span>
+        <p>Kami mengundang Anda untuk hadir di acara kami.</p>
+        
+        <a href="https://naufal-check.my.canva.site" class="btn-open">Buka Undangan</a>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        let nama = urlParams.get('to');
+
+        if (nama) {
+            document.getElementById('nama-tamu').innerText = decodeURIComponent(nama);
+        }
+    </script>
+</body>
+</html>
